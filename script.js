@@ -1,23 +1,44 @@
 // complete this js code
-function Person(name, age) {
-	this.name = name;
-	this.age = age;
+let perObj = {
+	greet(){
+	 	console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`)
+	}
 }
 
-Person.prototype.greet = ()=>{
-	console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`)
+function Person(name, age) {
+	const user = Object.create(perObj);
+	user.name = name;
+	user.age = age;
+	return user
 }
+
+// Person.prototype.greet = ()=>{
+// 	console.log(`Hello, my name is ${this.name}, I am ${this.age} years old.`)
+// }
+
+let empObj = {
+	jobGreet() {
+		console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}`);
+	}
+}
+
+Object.setPrototypeOf(empObj,perObj);
 
 function Employee(name, age, jobTitle) {
-	Person.call(this,name, age);
-	this.jobTitle = jobTitle;
+	const user1 = Object.create(empObj);
+	user.name = name;
+	user.age = age;
+	user.jobTitle = jobTitle;
+	return user1
 }
 
-Object.setPrototypeOf(Employee.prototype,Person.prototype);
 
-Employee.prototype.jobGreet = ()=>{
-	console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}`)
-}
+
+// Employee.prototype.jobGreet = ()=>{
+// 	console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}`)
+// }
+
+// const user1 = new
 
 // Do not change code below this line
 window.Person = Person;
