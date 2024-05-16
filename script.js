@@ -22,7 +22,7 @@ let empObj = {
 	}
 }
 
-Object.setPrototypeOf(empObj,perObj);
+Object.setPrototypeOf(empObj.prototype,perObj.prototype);
 
 function Employee(name, age, jobTitle) {
 	const user1 = Object.create(empObj);
