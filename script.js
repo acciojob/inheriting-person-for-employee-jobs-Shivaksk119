@@ -13,7 +13,7 @@ function Employee(name, age, jobTitle) {
 	this.jobTitle = jobTitle;
 }
 
-Object.setPrototypeOf(Employee,Person);
+Object.setPrototypeOf(Employee.prototype,Person.prototype);
 
 Employee.prototype.jobGreet = ()=>{
 	console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}`)
