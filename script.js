@@ -26,19 +26,16 @@ Object.setPrototypeOf(empObj,perObj);
 
 function Employee(name, age, jobTitle) {
 	const user1 = Object.create(empObj);
-	user.name = name;
-	user.age = age;
-	user.jobTitle = jobTitle;
+	user1.name = name;
+	user1.age = age;
+	user1.jobTitle = jobTitle;
 	return user1
 }
-
-
 
 // Employee.prototype.jobGreet = ()=>{
 // 	console.log(`Hello, my name is ${this.name}, I am ${this.age} years old, and my job title is ${this.jobTitle}`)
 // }
 
-// const user1 = new
 
 // Do not change code below this line
 window.Person = Person;
